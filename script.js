@@ -1,16 +1,3 @@
-function guess_input () {
-	let num = prompt("Joueur 2, essayez de deviner le nombre ( nombre entre 0 et 50)")
-	let nb = parseInt(num)
-	console.log(nb)
-	while (typeof(nb) != "number" || (nb > 50 || nb < 0))
-	{
-		num = prompt("Veuillez entrer un nombre entier entre 0 et 50")
-		nb = parseInt(num)
-	}
-	console.log(nb)
-	return (nb)
-}
-
 function nbToGuess() {
 	let num = prompt("Joueur 1, entrez un nombre entre 0 et 50")
 	let nb = parseInt(num)
