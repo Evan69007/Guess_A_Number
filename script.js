@@ -31,6 +31,7 @@ let winBool
 let count = 0
 let min = 0
 let max = 50
+
 const button = document.getElementById('num')
 
 button.addEventListener('click', () => {
@@ -53,8 +54,9 @@ button.addEventListener('click', () => {
 
 		document.getElementById('nb').placeholder = "Plus petit."
 	}
-	if (givenNumber > min && givenNumber < max) 
+	if (givenNumber >= min && givenNumber <= max) 
 	{
+		document.getElementById('message').innerText = ""
 		if (givenNumber < toGuess)
 		{
 			min = givenNumber
@@ -64,16 +66,9 @@ button.addEventListener('click', () => {
 			max = givenNumber
 		}
 	}
-	else if (givenNumber < max && givenNumber > min)
+	else 
 	{
-		if (givenNumber > toGuess)
-		{
-			max = givenNumber
-		}
-		else
-		{
-			min = givenNumber
-		}
+		document.getElementById('message').innerText = "Attention, le nombre entré n'est pas dans la range"
 	}
 	if (winBool != 1)
 	{
@@ -81,6 +76,6 @@ button.addEventListener('click', () => {
 	}
 	else
 	{
-		document.getElementById('range').innerText = " le nombre à trouver était " + toGuess
+		document.getElementById('range').innerText = "le nombre à trouver était " + toGuess
 	}
 })
